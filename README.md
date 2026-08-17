@@ -16,9 +16,9 @@ Before rolling this out, we need to know whether it actually works, and whether 
 
 **Primary metric** - *Weekly active rate*: the proportion of drivers completing at least one trip in the week (binary >> two_proportion z_test)
 
-**Secondary metric** — *Trips per driver*: average weekly trips (continuous → Welch's t_test)
+**Secondary metric** - *Trips per driver*: average weekly trips (continuous → Welch's t_test)
 
-**Guardrail metric** — *Cost per incremental trip*: does the incentive spend justify the volume gained?
+**Guardrail metric** - *Cost per incremental trip*: does the incentive spend justify the volume gained?
 
 ---
 
@@ -30,7 +30,7 @@ Before rolling this out, we need to know whether it actually works, and whether 
 | **H₁** | The incentive changes the weekly active rate (p_treatment ≠ p_control) |
 | **α** | 0.05 (two-tailed) |
 | **Power** | 0.80 |
-| **MDE** | 2 percentage points — the smallest lift worth the incentive cost |
+| **MDE** | 2 percentage points - the smallest lift worth the incentive cost |
 
 The MDE is set from the business case, not from what the data happens to show. A lift smaller than 2pp wouldn't pay back the bonus spend, so detecting it isn't useful.
 
