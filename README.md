@@ -72,11 +72,11 @@ python src/analysis.py           # Analyse the results
 
 **2. Randomisation check (A/A sanity).** Before testing the outcome, confirm the two groups are balanced on a pre-experiment covariate (prior-week trips). If randomisation failed, nothing downstream is trustworthy.
 
-**3. Primary test.** Two-proportion z-test on active rate, reported with a 95% confidence interval on the absolute difference — not just a p-value.
+**3. Primary test.** Two-proportion z-test on active rate, reported with a 95% confidence interval on the absolute difference, not just a p-value.
 
 **4. Secondary test.** Welch's t-test on trips per driver (Welch rather than Student's, since equal variance between groups isn't a safe assumption).
 
-**5. Effect size.** Cohen's h for the proportion difference. A statistically significant result on a large sample can still be practically meaningless — effect size makes that visible.
+**5. Effect size.** Cohen's h for the proportion difference. A statistically significant result on a large sample can still be practically meaningless, effect size makes that visible.
 
 **6. Guardrail.** Incremental trips are weighed against total incentive spend. A lift that costs more than it earns is not a win.
 
@@ -86,8 +86,8 @@ python src/analysis.py           # Analyse the results
 
 The analysis prints a decision framework rather than a bare p-value:
 
-- **Significant + above MDE + guardrail passes** → ship
-- **Significant + below MDE** → real but too small to justify cost
+- **Significant + above MDE + guardrail passes** >> ship
+- **Significant + below MDE** >> real but too small to justify cost
 - **Not significant** → insufficient evidence; check whether the test was adequately powered before concluding "no effect"
 
 ---
