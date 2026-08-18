@@ -12,7 +12,7 @@ import pandas as pd
 RANDOM_SEED = 42
 N_PER_GROUP = 4000
 
-# Ground truth — the analysis should recover something close to these
+# Ground truth - the analysis should recover something close to these
 CONTROL_ACTIVE_RATE = 0.62
 TRUE_LIFT = 0.025              # +2.5pp, slightly above our 2pp MDE
 CONTROL_MEAN_TRIPS = 11.5      # Among active drivers
@@ -32,7 +32,7 @@ def generate_group(rng, group_name, n, active_rate, mean_trips):
     """Generate one experiment arm."""
     driver_id = np.arange(n)
 
-    # Pre-experiment covariate — used later for a randomisation balance check.
+    # Pre-experiment covariate, used later for a randomisation balance check.
     # Generated independently of assignment, so groups should be balanced.
     prior_week_trips = rng.poisson(lam=10.5, size=n)
 
